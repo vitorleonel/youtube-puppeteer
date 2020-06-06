@@ -10,16 +10,16 @@ async function Bot() {
   await page.waitFor(5000);
 
   // Troque "eu" pelo nome do contato exibido na sua lista de conversas
-  await page.click('._2wP_Y span[title="Eu"]');
+  await page.click('._210SC span[title="Eu"]');
   await page.waitFor(1000);
 
-  await page.type("._3F6QL._2WovP", "E ai, beleza?");
+  await page.type("#main div.copyable-text.selectable-text", "E ai, beleza?");
   await page.waitFor(1000);
 
   await page.click('div[title="Anexar"]');
   await page.waitFor(1000);
 
-  const imageInput = await page.$("._2imug li input");
+  const imageInput = await page.$("ul.I4jbF li:nth-child(1) input[type=file]");
   imageInput.uploadFile("./minha-imagem.png");
 
   await page.waitFor(2000);
